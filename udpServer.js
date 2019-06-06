@@ -58,7 +58,7 @@ var buffer = require('buffer');
 var client = udp.createSocket('udp4');
 
 //buffer msg
-var data = Buffer.from('Ochoa Client');
+var data = Buffer.from('Client: Mensaje 1');
 
 client.on('message',function(msg,info){
   console.log('Client: Data received from server : ' + msg.toString());
@@ -74,8 +74,8 @@ client.send(data,2222,'localhost',function(error){
   }
 });
 
-var data1 = Buffer.from('Hello ');
-var data2 = Buffer.from('World');
+var data1 = Buffer.from('Client: Mensaje 2.1 ');
+var data2 = Buffer.from('Client: Mensaje 2.2');
 
 //sending multiple msg
 client.send([data1,data2],2222,'localhost',function(error){
